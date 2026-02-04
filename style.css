@@ -1,0 +1,501 @@
+
+:root {
+    --bg-color: #222831;       
+    --card-bg: #393E46;        
+    --accent-color: #00ADB5;   
+    --text-main: #EEEEEE;      
+    --text-muted: #adb5bd;     
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Navbar */
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    padding: 0 5%;
+    border-bottom: 1px solid rgba(57, 62, 70, 0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a, .social-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--text-muted);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+.social-links img {
+    width: 50px;
+    height:50px;
+    filter: brightness(0.8);
+    transition: filter 0.3s;
+}
+
+
+
+/* =========================================
+   3. SECTION GENERAL
+   ========================================= */
+section {
+    min-height: 100vh;
+    padding: 80px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* =========================================
+   4. HOME SECTION
+   ========================================= */
+.section-home {
+    padding-top: 60px;
+}
+
+.hero-text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.col-left {
+    flex: 1;
+    max-width: 600px;
+}
+
+.info-group {
+    margin-bottom: 50px;
+}
+
+h4 {
+    font-size: 0.7rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.info-group p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.bio-description {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-main);
+    opacity: 0.9;
+    text-align: justify;
+}
+
+
+.col-right {
+    flex: 0 0 400px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.image-frame {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 2 / 3;
+    background-color: var(--card-bg);
+    border-radius: 200px;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 15px 35px rgba(0, 173, 181, 0.2);
+    transition: all 0.3s ease;
+}
+
+.image-frame:hover {
+    box-shadow: 0 20px 45px rgba(0, 173, 181, 0.3);
+    transform: translateY(-5px);
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+}
+
+.image-frame:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* =========================================
+   5. SKILLS SECTION
+   ========================================= */
+.section-skills {
+    background-color: rgba(57, 62, 70, 0.3);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 173, 181, 0.2);
+}
+
+.skill-card h4 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Skill Items Container */
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: rgba(34, 40, 49, 0.4);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background-color: rgba(0, 173, 181, 0.1);
+    transform: translateX(5px);
+}
+
+.skill-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: brightness(0.9);
+    transition: filter 0.3s;
+}
+
+.skill-item:hover img {
+    filter: brightness(1.1);
+}
+
+.skill-item p {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.skill-item strong {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* =========================================
+   6. PROJECTS SECTION
+   ========================================= */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 30px rgba(0, 173, 181, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 250px;
+    background-color: rgba(34, 40, 49, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-placeholder {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+.project-card h3 {
+    padding: 20px 25px 10px;
+    font-size: 1.3rem;
+    color: var(--text-main);
+}
+
+.project-card p {
+    padding: 0 25px 25px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* Tambahkan setelah .project-card */
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+/* Ubah .project-image menjadi */
+.project-image {
+    width: 100%;
+    height: 250px;
+    background-color: rgba(34, 40, 49, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Tambahkan ini */
+}
+
+/* =========================================
+   7. CONTACT SECTION
+   ========================================= */
+.section-contact {
+    background-color: rgba(57, 62, 70, 0.3);
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.contact-item h4 {
+    margin-bottom: 15px;
+}
+
+.contact-item p {
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   8. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 1024px) {
+    .profile-container {
+        gap: 40px;
+    }
+    
+    .col-right {
+        flex: 0 0 350px;
+    }
+}
+
+@media (max-width: 900px) {
+    .profile-container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    .col-left {
+        max-width: 100%;
+    }
+    
+    .col-right {
+        flex: 0 0 auto;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    
+    .image-frame {
+        max-width: 320px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 60px 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-links a, .social-links a {
+        font-size: 0.65rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .image-frame {
+        max-width: 280px;
+    }
+    
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
