@@ -1,0 +1,40 @@
+:root {
+    --bg-color: #222831;       
+    --card-bg: #393E46;        
+    --accent-color: #00ADB5;   
+    --text-main: #EEEEEE;      
+    --text-muted: #adb5bd;     
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    padding: 0 5%;
+    border-bottom: 1px solid rgba(57, 62, 70, 0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
